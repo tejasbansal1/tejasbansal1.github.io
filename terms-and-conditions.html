@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <link rel="icon" type="image/png" href="images/logo.png">
-        <link href="./output.css" rel="stylesheet">
+        <link href="./src/output.css" rel="stylesheet">
     </head>
     <body class="bg-gray-50">
         <!-- Navigation -->
@@ -26,10 +26,10 @@
                         <a href="index.html#pricing" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
                         <a href="index.html#research" class="text-gray-700 hover:text-blue-700 font-medium">Research</a>
                         <a href="index.html#contact" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
-                        <a href="index.html#pricing" class="ml-4 bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe Now</a>
+                        <a href="index.html#pricing" class="ml-4 bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe</a>
                     </div>
                     <!-- <div class="hidden md:flex ml-4">
-                        <a href="#pricing" class="bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe Now</a>
+                        <a href="#pricing" class="bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe</a>
                     </div> -->
                     <div class="md:hidden">
                         <button id="menu-toggle" class="text-gray-700 focus:outline-none">
@@ -45,47 +45,61 @@
                     <a href="index.html#pricing" class="block py-2 text-gray-700 hover:text-blue-700">Services</a>
                     <a href="index.html#research" class="block py-2 text-gray-700 hover:text-blue-700">Research</a>
                     <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-blue-700">Contact</a>
-                    <a href="index.html#pricing" class="block mt-4 bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg shadow-lg text-center hover:bg-blue-800 transition duration-300">Subscribe Now</a>
+                    <a href="index.html#pricing" class="block mt-4 bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg shadow-lg text-center hover:bg-blue-800 transition duration-300">Subscribe</a>
                 </div>
             </div>
         </nav>
 
         <!--Content -->
         <section class="container mx-auto pt-28 pb-8 md:pt-24 px-4">
-            <div class="bg-white rounded-lg shadow-md p-8">
+            <div class="bg-white rounded-lg shadow-md p-4 md:p-8">
                 <div class="text-center mb-12">
                     <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-gray-800 mb-8">
                         Terms and Conditions
                     </h1>
                     <div class="w-24 h-1 bg-blue-700 mx-auto"></div>
                 </div>
-                <p class="text-gray-600 text-lg text-left">
-                    <strong>Introduction</strong><br>
-                    These Terms and Conditions (“T&C”) govern your use of research services provided by Equity Insights (“we”, “us”, “our”). By subscribing to or accessing any report, service or content, you agree to these T&C.<br><br>
-                    <strong>Scope of Services</strong><br>
-                    We offer independent, unbiased research reports and investment recommendations based on publicly available information and internal analysis.<br>
-                    Services include subscribing via our website or contacting us through our contact form.<br><br>
-                    <strong>Client Eligibility & KYC</strong><br>
-                    Only individuals or entities eligible under SEBI (Research Analyst) Regulations, 2014 may subscribe.<br>
-                    Clients must complete our KYC process by furnishing required details (name, PAN, Aadhaar where mandated) and supporting documents. We verify KYC with the SEBI‑specified KYC Registration Agency (KRA).<br><br>
-                    <strong>Fees & Payment</strong><br>
-                    Fees are agreed upfront and payable via Cashfree, cheque, online bank transfer, UPI or through CeFCoM. Cash payments are not accepted.<br>
-                    Advance payments, if any, cannot exceed one quarter of service fees.<br>
-                    Statutory charges (GST, stamp duty) are extra.<br><br>
-                    <strong>Risk Disclaimer</strong><br>
-                    Any investment based on our recommendations is subject to market risks and may not yield returns.<br>
-                    Recommendations do not assure profits or protect against losses.<br><br>
-                    <strong>Intellectual Property</strong><br>
-                    All content, reports, data and materials are our exclusive property. You may use them for personal, non‑commercial purposes only.<br><br>
-                    <strong>Confidentiality</strong><br>
-                    Client data and research before public release are confidential. We adhere to SEBI’s data‑privacy norms.<br><br>
-                    <strong>Limitation of Liability</strong><br>
-                    We shall not be liable for any direct or indirect loss arising from use of our research, except as mandated by SEBI regulations.<br><br>
-                    <strong>Termination & Refund</strong><br>
-                    Zero refund policy for all our services.<br><br>
-                    <hr class="my-8">
-                    <strong>Most Important Terms and Conditions (MITC) by SEBI</strong><br>
-                    <ol class="text-left list-decimal list-inside space-y-2">
+                <div class="text-gray-600 text-base text-lg text-left space-y-6 md:space-y-8 ">
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Introduction</h2>
+                    <p>These Terms and Conditions (“T&C”) govern your use of research services provided by Equity Insights (“we”, “us”, “our”). By subscribing to or accessing any report, service or content, you agree to these T&C.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Scope of Services</h2>
+                    <p>We offer independent, unbiased research reports and investment recommendations based on publicly available information and internal analysis.</p>
+                    <p>Services include subscribing via our website or contacting us through our contact form.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Client Eligibility &amp; KYC</h2>
+                    <p>Only individuals or entities eligible under SEBI (Research Analyst) Regulations, 2014 may subscribe. Clients must complete our KYC process by furnishing required details (name, PAN, Aadhaar where mandated) and supporting documents. We verify KYC with the SEBI‑specified KYC Registration Agency (KRA).</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Fees &amp; Payment</h2>
+                    <p>Fees are agreed upfront and payable via Cashfree, cheque, online bank transfer, UPI, or through CeFCoM. Cash payments are not accepted. Advance payments, if any, cannot exceed one quarter of service fees. Statutory charges (GST, stamp duty) are extra.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Risk Disclaimer</h2>
+                    <p>Any investment based on our recommendations is subject to market risks and may not yield returns. Recommendations do not assure profits or protect against losses.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Intellectual Property</h2>
+                    <p>All content, reports, data, and materials are our exclusive property. You may use them for personal, non‑commercial purposes only.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Confidentiality</h2>
+                    <p>Client data and research before public release are confidential. We adhere to SEBI’s data‑privacy norms.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Limitation of Liability</h2>
+                    <p>We shall not be liable for any direct or indirect loss arising from use of our research, except as mandated by SEBI regulations.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Termination &amp; Refund</h2>
+                    <p>Zero refund policy for all our services.</p>
+                  </section>
+                  <section>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2">Most Important Terms and Conditions (MITC) by SEBI</h2>
+                    <ol class="text-left list-decimal pl-4 space-y-6">
                         <li>These terms and conditions, and consent thereon are for the research services provided by the Research Analyst (RA) and RA cannot execute/carry out any trade (purchase/sell transaction) on behalf of, the client. Thus, the clients are advised not to permit RA to execute any trade on their behalf.</li>
                         <li>The fee charged by RA to the client will be subject to the maximum of amount prescribed by SEBI/ Research Analyst Administration and Supervisory Body (RAASB) from time to time (applicable only for Individual and HUF Clients).
                             <ul class="list-disc list-inside ml-6">
@@ -111,7 +125,8 @@
                         <li>Clients are required to keep contact details, including email id and mobile number/s updated with the RA at all times.</li>
                         <li>The RA shall never ask for the client’s login credentials and OTPs for the client’s Trading Account Demat Account and Bank Account. Never share such information with anyone including RA.</li>
                     </ol>
-                </p>
+                  </section>
+                </div>
             </div>
         </section>
 
