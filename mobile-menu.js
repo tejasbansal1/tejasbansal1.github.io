@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   menuToggle.addEventListener('click', function(event) {
     event.stopPropagation(); // Prevent click from bubbling to document
     mobileMenu.classList.toggle('hidden');
+    const isExpanded = !mobileMenu.classList.contains('hidden');
+    menuToggle.setAttribute('aria-expanded', isExpanded.toString());
   });
 
   // Auto-close mobile menu on link click
@@ -18,12 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (href && href.startsWith('#')) {
         e.preventDefault();
         mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
         setTimeout(() => {
           window.location.hash = href;
         }, 150); // Adjust delay as needed for your animation
       } else {
         // For external links, just close the menu
         mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
@@ -35,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         !mobileMenu.contains(event.target) &&
         !menuToggle.contains(event.target)) {
       mobileMenu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
     }
   });
 }); 
