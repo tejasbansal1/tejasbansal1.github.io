@@ -540,39 +540,80 @@
                 </div>
                 </div>
 
-                <!-- Tweets -->
+                <!-- Tweets Carousel -->
                 <h3 class="text-2xl font-semibold text-gray-700 mb-4 text-center">Tweets</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                            <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">Valuation Metric across sectors⏬ <a href="https://t.co/RAHnHFlMH5">pic.twitter.com/RAHnHFlMH5</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1906340495019712551?ref_src=twsrc%5Etfw">March 30, 2025</a></blockquote>
+                <div class="relative sm:px-6" id="tw-carousel">
+                    <button id="tw-prev" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="tw-next" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div style="overflow: hidden; padding-top: 10px; margin-top: -10px;">
+                        <div id="tw-track" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">Peter Lynch classified stocks into 6 categories<br><br>1⃣Fast Growers<br>2⃣Stalwarts<br>3⃣Slow Growers<br>4⃣Cyclicals<br>5⃣Turnarounds<br>6⃣Asset Plays<br><br>Turnarounds &amp; Asset Plays are very difficult to spot &amp; very few plays out<br><br>If you want to make money focus should be on &quot;Fast Growers&quot;<br><br>Fast Growers… <a href="https://t.co/4itRqehi5j">pic.twitter.com/4itRqehi5j</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2040404183740973352?ref_src=twsrc%5Etfw">April 4, 2026</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">HOW Valuations &amp; Earnings growth shape 3 year returns?🔖<br><br>Clear matrix showing every combo of growth vs. P/E change⏬<br><br>- Base EPS = 100<br>- Horizon = 3 years<br><br>Initial P/E = 20x, 30x, 40x<br>EPS CAGR = 20%, 30%, 40%<br>Exit P/E = 20x, 30x, 40x<br><br>Initial price = 100 × Initial P/E<br>Final… <a href="https://t.co/ummWkt1El8">pic.twitter.com/ummWkt1El8</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1933802063932117471?ref_src=twsrc%5Etfw">June 14, 2025</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">Peak P/E Risk is real - even the best businesses deliver the worst outcomes if bought at extreme valuations<br><br>IRCTC - 250 P/E<br>Waaree Renewables - 250 P/E<br>Dixon Tech - 200 P/E<br>Trent - 200 P/E<br><br>These prices might never come again valuation-wise<br>Even if they do, it will take a long… <a href="https://t.co/2lVouQkJBV">pic.twitter.com/2lVouQkJBV</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2040682120251867507?ref_src=twsrc%5Etfw">April 5, 2026</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">Stock Price Catalysts 🔖<br><br>Always have a clear written thesis whenever you buy a stock. This simple habit significantly improves clarity and decision making, especially during periods of market volatility.<br><br>When market breadth deteriorates, stock prices decline even when the… <a href="https://t.co/nmXUVGY6ta">pic.twitter.com/nmXUVGY6ta</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2033072449156428104?ref_src=twsrc%5Etfw">March 15, 2026</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">One of the most important metrics I track while evaluating businesses is Cashflows<br><br>There is a famous saying in investing<br>&quot;Revenue is vanity, profit is sanity, but cash is reality&quot;<br><br>Profits can be adjusted through accounting, but cash flows reflect the real strength of the… <a href="https://t.co/tIrLY81R0c">pic.twitter.com/tIrLY81R0c</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2040111592583659575?ref_src=twsrc%5Etfw">April 3, 2026</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
+                            <div class="tw-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover relative min-h-[650px] sm:min-h-[600px]">
+                                    <div class="p-6">
+                                        <div class="tw-skeleton"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar-img"></div></div>
+                                        <blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">Market bottom checklist I often track<br><br>When 8 or more boxes start getting ticked, markets are usually very close to the worst phase of the correction<br>(Not necessarily the exact bottom)<br><br>They usually bottom when fear is maximum, sentiment is extremely weak &amp; most participants have… <a href="https://t.co/pxZXLPNNy3">pic.twitter.com/pxZXLPNNy3</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2030867499517112688?ref_src=twsrc%5Etfw">March 9, 2026</a></blockquote>
+                                    </div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 12%; z-index: 2;"></div>
+                                    <div class="tw-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 12%; z-index: 2;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                            <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">Exiting a Stock?<br>~ By RAKESH JHUNJHUNWALA<br><br>Exit when EPS growth expectations becomes unsustainable (e.g. Infosys in 2000, where the market assumed 100 % growth forever)<br><br>Exit when P/E becomes absurd<br><br>Do listen, lots of wisdom⏬<br><br>Src ~ FLAME University <a href="https://t.co/TUaksPwRbh">pic.twitter.com/TUaksPwRbh</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1937421055854874674?ref_src=twsrc%5Etfw">June 24, 2025</a></blockquote>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                            <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">Golden Rules of Investing<br><br>My key learnings I try to follow <br><br>Bookmark for later🔖 <a href="https://t.co/glBPeYmebk">pic.twitter.com/glBPeYmebk</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1845332656281526482?ref_src=twsrc%5Etfw">October 13, 2024</a></blockquote>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In this video, I discuss<br><br>When the markets could bottom?<br>Key data points that indicate where we are in the cycle<br>Sharing my perspective⏬ <a href="https://t.co/OtuTqlQZpm">pic.twitter.com/OtuTqlQZpm</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/2033206685297438885?ref_src=twsrc%5Etfw">March 15, 2026</a></blockquote>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                            <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">📌My Investing Blueprint <a href="https://t.co/Dndt3h6dsp">pic.twitter.com/Dndt3h6dsp</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1845706156913901900?ref_src=twsrc%5Etfw">October 14, 2024</a></blockquote>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                        <div class="p-6">
-                            <blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">When to Sell: Lessons from Rakesh Jhunjhunwala🔖 <a href="https://t.co/JYEpALNVmd">pic.twitter.com/JYEpALNVmd</a></p>&mdash; Equity Insights Elite (@EquityInsightss) <a href="https://twitter.com/EquityInsightss/status/1937432731866247279?ref_src=twsrc%5Etfw">June 24, 2025</a></blockquote>
-                        </div>
-                    </div>
+                    <div id="tw-dots" class="hidden justify-center gap-2 mt-6 tw-js-only"></div>
                 </div>
             </div>
         </section>
@@ -985,8 +1026,131 @@
                 init();
             })();
         </script>
+        <script>
+            (function () {
+                let twIndex = 0;
+                let twTouchStartX = 0;
+                let twTouchStartY = 0;
+                let twCardWidth = 0;
+                let twResizeTimer;
+
+                const twTrack = document.getElementById('tw-track');
+                const twDotsEl = document.getElementById('tw-dots');
+                const twCards = document.querySelectorAll('.tw-card');
+
+                function twVisibleCount() {
+                    if (window.innerWidth >= 1024) return 3;
+                    if (window.innerWidth >= 768) return 2;
+                    return 1;
+                }
+
+                function twTotalSlides() {
+                    return Math.max(1, twCards.length - twVisibleCount() + 1);
+                }
+
+                function twSetCardWidths() {
+                    twCardWidth = twTrack.parentElement.offsetWidth / twVisibleCount();
+                    twCards.forEach(function (card) { card.style.width = twCardWidth + 'px'; });
+                }
+
+                function twBuildDots() {
+                    twDotsEl.innerHTML = '';
+                    var n = twTotalSlides();
+                    for (var i = 0; i < n; i++) {
+                        var dot = document.createElement('button');
+                        dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-200 ' + (i === twIndex ? 'bg-blue-700' : 'bg-gray-300');
+                        dot.addEventListener('click', (function (idx) { return function () { twGoTo(idx); }; })(i));
+                        twDotsEl.appendChild(dot);
+                    }
+                }
+
+                function twUpdateDots() {
+                    twDotsEl.querySelectorAll('button').forEach(function (dot, i) {
+                        dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-200 ' + (i === twIndex ? 'bg-blue-700' : 'bg-gray-300');
+                    });
+                }
+
+                function twGoTo(index) {
+                    var n = twTotalSlides();
+                    twIndex = ((index % n) + n) % n;
+                    twTrack.style.transform = 'translateX(-' + (twIndex * twCardWidth) + 'px)';
+                    twUpdateDots();
+                }
+
+                function twInit() {
+                    twTrack.style.display = 'flex';
+                    twTrack.style.gap = '0';
+                    twTrack.style.transition = 'transform 300ms ease-in-out';
+                    document.querySelectorAll('.tw-js-only').forEach(function (el) { el.style.display = 'flex'; });
+                    twSetCardWidths();
+                    twIndex = 0;
+                    twBuildDots();
+                    twGoTo(0);
+                }
+
+                document.getElementById('tw-prev').addEventListener('click', function () { twGoTo(twIndex - 1); });
+                document.getElementById('tw-next').addEventListener('click', function () { twGoTo(twIndex + 1); });
+
+                // Touch swipe
+                var twCarousel = document.getElementById('tw-carousel');
+                twCarousel.addEventListener('touchstart', function (e) {
+                    twTouchStartX = e.changedTouches[0].screenX;
+                    twTouchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+                twCarousel.addEventListener('touchend', function (e) {
+                    var dx = twTouchStartX - e.changedTouches[0].screenX;
+                    var dy = twTouchStartY - e.changedTouches[0].screenY;
+                    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+                        twGoTo(dx > 0 ? twIndex + 1 : twIndex - 1);
+                    }
+                }, { passive: true });
+
+                window.addEventListener('resize', function () {
+                    clearTimeout(twResizeTimer);
+                    twResizeTimer = setTimeout(twInit, 150);
+                });
+
+                window.addEventListener('load', twInit);
+                twInit();
+            })();
+        </script>
         <script src="mobile-menu.js"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script>
+            function onTweetsRendered() {
+                // Remove skeletons, show blockquotes
+                document.querySelectorAll('.tw-skeleton').forEach(function (s) { s.remove(); });
+                document.querySelectorAll('.tw-card blockquote').forEach(function (b) { b.style.display = ''; });
+
+                // Equalize card heights
+                equalizeTweetCards();
+            }
+
+            function equalizeTweetCards() {
+                var cards = document.querySelectorAll('.tw-card > div');
+                var maxH = 0;
+                cards.forEach(function (card) {
+                    card.style.height = 'auto';
+                    if (card.offsetHeight > maxH) maxH = card.offsetHeight;
+                });
+                cards.forEach(function (card) { card.style.height = maxH + 'px'; });
+            }
+
+            // Hook into Twitter widget API
+            var twCheck = setInterval(function () {
+                if (typeof twttr !== 'undefined' && twttr.events) {
+                    clearInterval(twCheck);
+                    twttr.events.bind('loaded', onTweetsRendered);
+                }
+            }, 200);
+            // Fallback
+            setTimeout(onTweetsRendered, 6000);
+
+            // Re-equalize on resize, after carousel reinit
+            window.addEventListener('resize', function () {
+                setTimeout(equalizeTweetCards, 300);
+            });
+        </script>
         <script async src="https://www.smallcase.com/embed/assets/embed.js"></script>
 
     </body>
