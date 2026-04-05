@@ -446,6 +446,102 @@
                     <h2 class="text-3xl sm:text-5xl font-semibold tracking-tight text-gray-800 mb-8">Knowledge Base</h2>
                     <div class="w-24 h-1 bg-blue-700 mx-auto"></div>
                 </div>
+
+                <!-- YouTube Carousel -->
+                <div id="yt-section">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center">YouTube Videos</h3>
+                <div class="relative mb-16 sm:px-6" id="yt-carousel">
+                    <button id="yt-prev" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="yt-next" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div style="overflow: hidden; padding-top: 10px; margin-top: -10px;">
+                        <div id="yt-track" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="yt-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
+                                    <div class="aspect-video relative">
+                                        <div class="yt-player-host w-full h-full">
+                                            <a href="https://www.youtube.com/watch?v=BP8oHXhtiYc" target="_blank" rel="noopener" class="yt-player-trigger w-full h-full flex items-center justify-center" data-video-id="BP8oHXhtiYc" aria-label="Play YouTube video" style="background-image: linear-gradient(rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.3)), url('https://i.ytimg.com/vi/BP8oHXhtiYc/hqdefault.jpg'); background-size: cover; background-position: center;">
+                                                <span style="width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+                                                    <span style="margin-left: 0.2rem; width: 0; height: 0; border-top: 0.7rem solid transparent; border-bottom: 0.7rem solid transparent; border-left: 1.1rem solid #1d4ed8;"></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 18%; z-index: 2;"></div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 18%; z-index: 2;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yt-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
+                                    <div class="aspect-video relative">
+                                        <div class="yt-player-host w-full h-full">
+                                            <a href="https://www.youtube.com/watch?v=VS6ZGdTuH0A" target="_blank" rel="noopener" class="yt-player-trigger w-full h-full flex items-center justify-center" data-video-id="VS6ZGdTuH0A" aria-label="Play YouTube video" style="background-image: linear-gradient(rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.3)), url('https://i.ytimg.com/vi/VS6ZGdTuH0A/hqdefault.jpg'); background-size: cover; background-position: center;">
+                                                <span style="width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+                                                    <span style="margin-left: 0.2rem; width: 0; height: 0; border-top: 0.7rem solid transparent; border-bottom: 0.7rem solid transparent; border-left: 1.1rem solid #1d4ed8;"></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 18%; z-index: 2;"></div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 18%; z-index: 2;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yt-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
+                                    <div class="aspect-video relative">
+                                        <div class="yt-player-host w-full h-full">
+                                            <a href="https://www.youtube.com/watch?v=3uDW262uCos" target="_blank" rel="noopener" class="yt-player-trigger w-full h-full flex items-center justify-center" data-video-id="3uDW262uCos" aria-label="Play YouTube video" style="background-image: linear-gradient(rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.3)), url('https://i.ytimg.com/vi/3uDW262uCos/hqdefault.jpg'); background-size: cover; background-position: center;">
+                                                <span style="width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+                                                    <span style="margin-left: 0.2rem; width: 0; height: 0; border-top: 0.7rem solid transparent; border-bottom: 0.7rem solid transparent; border-left: 1.1rem solid #1d4ed8;"></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 18%; z-index: 2;"></div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 18%; z-index: 2;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yt-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
+                                    <div class="aspect-video relative">
+                                        <div class="yt-player-host w-full h-full">
+                                            <a href="https://www.youtube.com/watch?v=exxy4QmM9Pk" target="_blank" rel="noopener" class="yt-player-trigger w-full h-full flex items-center justify-center" data-video-id="exxy4QmM9Pk" aria-label="Play YouTube video" style="background-image: linear-gradient(rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.3)), url('https://i.ytimg.com/vi/exxy4QmM9Pk/hqdefault.jpg'); background-size: cover; background-position: center;">
+                                                <span style="width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+                                                    <span style="margin-left: 0.2rem; width: 0; height: 0; border-top: 0.7rem solid transparent; border-bottom: 0.7rem solid transparent; border-left: 1.1rem solid #1d4ed8;"></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 18%; z-index: 2;"></div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 18%; z-index: 2;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="yt-card flex-shrink-0 px-2">
+                                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
+                                    <div class="aspect-video relative">
+                                        <div class="yt-player-host w-full h-full">
+                                            <a href="https://www.youtube.com/watch?v=iI8Wx3b05gw" target="_blank" rel="noopener" class="yt-player-trigger w-full h-full flex items-center justify-center" data-video-id="iI8Wx3b05gw" aria-label="Play YouTube video" style="background-image: linear-gradient(rgba(17, 24, 39, 0.15), rgba(17, 24, 39, 0.3)), url('https://i.ytimg.com/vi/iI8Wx3b05gw/hqdefault.jpg'); background-size: cover; background-position: center;">
+                                                <span style="width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">
+                                                    <span style="margin-left: 0.2rem; width: 0; height: 0; border-top: 0.7rem solid transparent; border-bottom: 0.7rem solid transparent; border-left: 1.1rem solid #1d4ed8;"></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 auto 0 0; width: 18%; z-index: 2;"></div>
+                                        <div class="yt-swipe-zone" aria-hidden="true" style="position: absolute; inset: 0 0 0 auto; width: 18%; z-index: 2;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="yt-dots" class="hidden justify-center gap-2 mt-6 yt-js-only"></div>
+                </div>
+                </div>
+
+                <!-- Tweets -->
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4 text-center">Tweets</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
                         <div class="p-6">
@@ -752,6 +848,143 @@
                 </div>
             </div>
         </footer>
+        <script>
+            (function () {
+                let currentIndex = 0;
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let touchEndX = 0;
+                let touchEndY = 0;
+                let isTouchingVideo = false;
+                let cardWidth = 0;
+                let resizeTimer;
+
+                // Cached DOM refs
+                const track = document.getElementById('yt-track');
+                const dotsEl = document.getElementById('yt-dots');
+                const cards = document.querySelectorAll('.yt-card');
+
+                function visibleCount() {
+                    if (window.innerWidth >= 1024) return 3;
+                    if (window.innerWidth >= 768) return 2;
+                    return 1;
+                }
+
+                function totalSlides() {
+                    return Math.max(1, cards.length - visibleCount() + 1);
+                }
+
+                function setCardWidths() {
+                    cardWidth = track.parentElement.offsetWidth / visibleCount();
+                    cards.forEach(function (card) { card.style.width = cardWidth + 'px'; });
+                }
+
+                function buildDots() {
+                    dotsEl.innerHTML = '';
+                    const n = totalSlides();
+                    for (let i = 0; i < n; i++) {
+                        const dot = document.createElement('button');
+                        dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-200 ' + (i === currentIndex ? 'bg-blue-700' : 'bg-gray-300');
+                        dot.addEventListener('click', function () { goTo(i); });
+                        dotsEl.appendChild(dot);
+                    }
+                }
+
+                function updateDots() {
+                    dotsEl.querySelectorAll('button').forEach(function (dot, i) {
+                        dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-200 ' + (i === currentIndex ? 'bg-blue-700' : 'bg-gray-300');
+                    });
+                }
+
+                function pauseAllVideos() {
+                    document.querySelectorAll('.yt-card iframe').forEach(function (iframe) {
+                        try {
+                            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', 'https://www.youtube.com');
+                        } catch (e) {}
+                    });
+                }
+
+                function buildIframe(videoId) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
+                    iframe.className = 'w-full h-full';
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('title', 'YouTube video player');
+                    return iframe;
+                }
+
+                function goTo(index) {
+                    const n = totalSlides();
+                    currentIndex = ((index % n) + n) % n;
+                    pauseAllVideos();
+                    track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
+                    updateDots();
+                }
+
+                function init() {
+                    // Switch from CSS grid fallback to JS carousel
+                    track.style.display = 'flex';
+                    track.style.gap = '0';
+                    document.querySelectorAll('.yt-js-only').forEach(function (el) { el.style.display = 'flex'; });
+
+                    setCardWidths();
+                    currentIndex = 0;
+                    buildDots();
+                    goTo(0);
+                }
+
+                // Arrow buttons
+                document.getElementById('yt-prev').addEventListener('click', function () { goTo(currentIndex - 1); });
+                document.getElementById('yt-next').addEventListener('click', function () { goTo(currentIndex + 1); });
+
+                document.querySelectorAll('.yt-player-trigger').forEach(function (trigger) {
+                    trigger.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const videoContainer = trigger.closest('.yt-player-host');
+                        if (!videoContainer) return;
+
+                        pauseAllVideos();
+                        videoContainer.innerHTML = '';
+                        videoContainer.appendChild(buildIframe(trigger.dataset.videoId));
+                    });
+                });
+
+                // Touch swipe over entire YouTube section
+                const ytSection = document.getElementById('yt-section');
+                ytSection.addEventListener('touchstart', function (e) {
+                    isTouchingVideo = !!e.target.closest('iframe');
+                    if (isTouchingVideo) return;
+                    touchStartX = e.changedTouches[0].screenX;
+                    touchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+                ytSection.addEventListener('touchend', function (e) {
+                    if (isTouchingVideo) {
+                        isTouchingVideo = false;
+                        return;
+                    }
+                    touchEndX = e.changedTouches[0].screenX;
+                    touchEndY = e.changedTouches[0].screenY;
+
+                    const deltaX = touchStartX - touchEndX;
+                    const deltaY = touchStartY - touchEndY;
+
+                    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                        goTo(touchStartX > touchEndX ? currentIndex + 1 : currentIndex - 1);
+                    }
+                }, { passive: true });
+
+                // Debounced resize — only recalculates after resizing stops
+                window.addEventListener('resize', function () {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(init, 150);
+                });
+
+                window.addEventListener('load', init);
+                init();
+            })();
+        </script>
         <script src="mobile-menu.js"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script async src="https://www.smallcase.com/embed/assets/embed.js"></script>
