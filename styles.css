@@ -20,6 +20,41 @@ body {
     background: linear-gradient(135deg, #f0f4ff 0%, #dbe4ff 100%);
 }
 
+.plan-eyebrow {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.smallcase-embed-frame {
+    align-items: stretch;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    min-height: 260px;
+    width: 100%;
+}
+
+.carousel-dot {
+    background: #d1d5db;
+    border-radius: 9999px;
+    height: 0.625rem;
+    transition: background 180ms ease, width 180ms ease;
+    width: 0.625rem;
+}
+
+.carousel-dot.is-active {
+    background: #1d4ed8;
+    width: 1.5rem;
+}
+
+.carousel-dot-light {
+    background: rgba(191, 219, 254, 0.75);
+}
+
+.carousel-dot-light.is-active {
+    background: #fff;
+}
+
 /* Tweet loading skeleton */
 .tw-skeleton {
     display: flex;
