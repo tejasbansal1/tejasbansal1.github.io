@@ -7,6 +7,10 @@ body {
     background: linear-gradient(135deg, #1a3a8f 0%, #0f2557 100%);
 }
 
+.pricing-card-gradient {
+    background: linear-gradient(to top right, #1e40af 0%, #1d4ed8 100%);
+}
+
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
