@@ -30,6 +30,7 @@
     gtag('config', 'G-HD9HWDCCZB');
     </script>
     <body class="bg-gray-50">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <!-- Navigation -->
         <nav class="bg-white shadow-md fixed w-full z-50">
             <div class="container mx-auto px-4 py-3">
@@ -46,7 +47,7 @@
                         <a href="#pricing" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
                         <a href="#research" class="text-gray-700 hover:text-blue-700 font-medium">Research</a>
                         <a href="#contact" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
-                        <a href="#pricing" class="ml-2 bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe</a>
+                        <a href="#subscribe" class="ml-2 bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300">Subscribe</a>
                     </div>
                     <div class="md:hidden">
                         <button id="menu-toggle" class="text-gray-700 focus:outline-none" aria-label="Toggle navigation" aria-controls="mobile-menu" aria-expanded="false">
@@ -62,10 +63,11 @@
                     <a href="#pricing" class="block py-2 text-gray-700 hover:text-blue-700">Services</a>
                     <a href="#research" class="block py-2 text-gray-700 hover:text-blue-700">Research</a>
                     <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-700">Contact</a>
-                    <a href="#pricing" class="block mt-4 bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg shadow-lg text-center hover:bg-blue-800 transition duration-300">Subscribe</a>
+                    <a href="#subscribe" class="block mt-4 bg-blue-700 text-white font-semibold px-5 py-3 rounded-lg shadow-lg text-center hover:bg-blue-800 transition duration-300">Subscribe</a>
                 </div>
             </div>
         </nav>
+        <main id="main-content" tabindex="-1">
         <!-- Home Section -->
         <section id="home" class="hero-gradient pt-28 pb-8 md:pt-24">
             <div class="container mx-auto px-4 md:px-8 lg:px-12">
@@ -251,7 +253,7 @@
                 <a href="onboarding.html" class="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-blue-700 ring-1 ring-blue-200 ring-inset hover:ring-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 sm:mt-10 transition">Get started today</a>
               </div>
               <!-- Smallcase Plans -->
-              <div class="relative rounded-3xl pricing-card-gradient p-8 shadow-2xl ring-1 ring-blue-300 sm:p-10 flex flex-col items-center justify-center">
+              <div id="subscribe" class="relative rounded-3xl pricing-card-gradient p-8 shadow-2xl ring-1 ring-blue-300 sm:p-10 flex flex-col items-center justify-center">
                 <div class="text-center">
                   <p class="plan-eyebrow text-sm font-semibold text-blue-100">Smallcase</p>
                   <h3 id="smallcase-plan-title" class="mt-3 text-3xl font-semibold tracking-tight text-white">Emerging Leaders</h3>
@@ -305,7 +307,7 @@
                     </svg>
                   </button>
                 </div>
-                <div id="sc-dots" class="hidden justify-center gap-2 mt-3 sc-js-only" aria-label="Smallcase plan selector"></div>
+                <div id="sc-dots" class="hidden justify-center gap-2 mt-3 sc-js-only" role="group" aria-label="Smallcase plan selector"></div>
                 <a id="smallcase-subscribe-link" href="https://equityinsightselite.smallcase.com/smallcase/EQIEFMM_0001" target="_blank" rel="noopener" class="mt-6 block w-full rounded-md bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-blue-700 shadow-xs hover:bg-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition">Subscribe Now</a>
               </div>
             </div>
@@ -487,10 +489,10 @@
                 <div id="yt-section">
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center">YouTube Videos</h3>
                 <div class="relative mb-16 sm:px-6" id="yt-carousel">
-                    <button id="yt-prev" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
+                    <button id="yt-prev" aria-label="Previous video" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
                     </button>
-                    <button id="yt-next" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
+                    <button id="yt-next" aria-label="Next video" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 yt-js-only">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div style="overflow: hidden; padding-top: 10px; margin-top: -10px;">
@@ -579,10 +581,10 @@
                 <!-- Tweets Carousel -->
                 <h3 class="text-2xl font-semibold text-gray-700 mb-4 text-center">Tweets</h3>
                 <div class="relative sm:px-6" id="tw-carousel">
-                    <button id="tw-prev" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
+                    <button id="tw-prev" aria-label="Previous tweet" class="hidden absolute left-1 sm:left-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
                     </button>
-                    <button id="tw-next" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
+                    <button id="tw-next" aria-label="Next tweet" class="hidden absolute right-1 sm:right-0 top-[45%] -translate-y-1/2 z-10 bg-white/90 shadow-md rounded-full w-8 h-8 items-center justify-center text-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-200 tw-js-only">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </button>
                     <div style="overflow: hidden; padding-top: 10px; margin-top: -10px;">
@@ -657,7 +659,7 @@
         <section class="py-8 testimonial-gradient">
             <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl sm:text-5xl font-semibold tracking-tighttext-gray-800 mb-8">What Our Clients Say</h2>
+                    <h2 class="text-3xl sm:text-5xl font-semibold tracking-tight text-gray-800 mb-8">What Our Clients Say</h2>
                     <div class="w-24 h-1 bg-blue-700 mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -825,19 +827,19 @@
                             <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
                             <div class="mb-6">
                                 <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                                <input type="text" id="name" name="name" autocomplete="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name" required>
+                                <input type="text" id="name" name="name" autocomplete="name" class="w-full px-4 py-3 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name" required>
                             </div>
                             <div class="mb-6">
                                 <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                <input type="email" name="email" id="email" autocomplete="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your email" required>
+                                <input type="email" name="email" id="email" autocomplete="email" class="w-full px-4 py-3 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your email" required>
                             </div>
                             <div class="mb-6">
                                 <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                                <input type="text" name="subject" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Subject" required>
+                                <input type="text" name="subject" id="subject" autocomplete="off" class="w-full px-4 py-3 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Subject" required>
                             </div>
                             <div class="mb-6">
                                 <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                                <textarea id="message"name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your message" required></textarea>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your message" required></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800 transition duration-300 w-full">Send Message</button>
@@ -851,6 +853,7 @@
             </div>
         </section>
         <!-- Footer -->
+        </main>
         <footer class="bg-gray-800 text-white py-12">
             <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -889,7 +892,7 @@
                             </a>
                         </div>
                         <p class="text-gray-400 mt-2">
-                          <a href="/#contact" class="text-gray-300 hover:text-white">Reach Us:</a>
+                          <span class="text-gray-300">Reach Us:</span>
                         </p>
                         <p class="text-gray-300">Tejas Bansal</p>
                         <p class="text-gray-300 mb-4">SEBI Registered Research Analyst<br>SEBI Reg No. INH000021261</p>

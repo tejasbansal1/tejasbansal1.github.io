@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < n; i++) {
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === currentIndex ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to video ' + (i + 1));
         dot.addEventListener('click', function () { goTo(i); });
         dotsEl.appendChild(dot);
       }
@@ -274,6 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var i = 0; i < n; i++) {
         var dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === twIndex ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to tweet ' + (i + 1));
         dot.addEventListener('click', (function (idx) { return function () { twGoTo(idx); }; })(i));
         twDotsEl.appendChild(dot);
       }
@@ -402,6 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var i = 0; i < scTotalSlides(); i++) {
         var dot = document.createElement('button');
         dot.className = 'carousel-dot carousel-dot-light' + (i === scIndex ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to plan ' + (i + 1));
         dot.addEventListener('click', (function (idx) { return function () { scGoTo(idx); }; })(i));
         scDotsEl.appendChild(dot);
       }
@@ -527,8 +530,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  function titleSmallcaseIframes() {
+    function applyTitle(iframe) {
+      if (!iframe.title) iframe.title = 'Smallcase investment portfolio';
+    }
+    document.querySelectorAll('.smallcase-embed-frame iframe').forEach(applyTitle);
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          if (node.tagName === 'IFRAME' && node.closest('.smallcase-embed-frame')) applyTitle(node);
+          if (node.querySelectorAll) node.querySelectorAll('.smallcase-embed-frame iframe').forEach(applyTitle);
+        });
+      });
+    });
+    document.querySelectorAll('.smallcase-embed-frame').forEach(function (container) {
+      observer.observe(container, { childList: true, subtree: true });
+    });
+  }
+
   initYouTubeCarousel();
   initTweetsCarousel();
   initSmallcaseCarousel();
   initTwitterWidgets();
+  titleSmallcaseIframes();
 })();
