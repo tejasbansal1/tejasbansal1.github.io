@@ -6,6 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (!menuToggle || !mobileMenu) return;
 
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function focusHashTarget(hash) {
+    const target = hash ? document.querySelector(hash) : null;
+    if (target) {
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    } else {
+      menuToggle.focus();
+    }
+  }
+
   menuToggle.addEventListener('click', function(event) {
     event.stopPropagation(); // Prevent click from bubbling to document
     mobileMenu.classList.toggle('hidden');
@@ -21,15 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
         setTimeout(() => {
           window.location.hash = href;
+          focusHashTarget(href);
         }, 150); // Adjust delay as needed for your animation
       } else {
         // For external links, just close the menu
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
       }
     });
   });
@@ -40,14 +54,38 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!mobileMenu.classList.contains('hidden') &&
         !mobileMenu.contains(event.target) &&
         !menuToggle.contains(event.target)) {
-      mobileMenu.classList.add('hidden');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile menu on Escape and return focus to the toggle button
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+      closeMobileMenu();
+      menuToggle.focus();
     }
   });
 });
 
 // Homepage carousels and embeds
 (function () {
+  var carouselLiveRegion = document.createElement('div');
+  carouselLiveRegion.setAttribute('aria-live', 'polite');
+  carouselLiveRegion.setAttribute('aria-atomic', 'true');
+  carouselLiveRegion.className = 'sr-only';
+  document.body.appendChild(carouselLiveRegion);
+
+  function announceSlide(message) {
+    carouselLiveRegion.textContent = message;
+  }
+
+  function markCloneInert(clone) {
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('inert', '');
+    clone.removeAttribute('id');
+    clone.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+  }
+
   function initYouTubeCarousel() {
     let currentIndex = 0;
     let touchStartX = 0;
@@ -89,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const lastClone = cards[cards.length - 1].cloneNode(true);
       firstClone.setAttribute('data-carousel-clone', 'true');
       lastClone.setAttribute('data-carousel-clone', 'true');
+      markCloneInert(firstClone);
+      markCloneInert(lastClone);
       track.appendChild(firstClone);
       track.insertBefore(lastClone, track.firstChild);
     }
@@ -100,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === currentIndex ? ' is-active' : '');
         dot.setAttribute('aria-label', 'Go to video ' + (i + 1));
+        if (i === currentIndex) dot.setAttribute('aria-current', 'true');
         dot.addEventListener('click', function () { goTo(i); });
         dotsEl.appendChild(dot);
       }
@@ -108,6 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateDots() {
       dotsEl.querySelectorAll('button').forEach(function (dot, i) {
         dot.className = 'carousel-dot' + (i === currentIndex ? ' is-active' : '');
+        if (i === currentIndex) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
       });
     }
 
@@ -116,6 +162,19 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
           iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', 'https://www.youtube.com');
         } catch (e) {}
+      });
+    }
+
+    function updateSlideVisibility() {
+      var vc = visibleCount();
+      cards.forEach(function (card, i) {
+        if (i >= currentIndex && i < currentIndex + vc) {
+          card.removeAttribute('aria-hidden');
+          card.removeAttribute('inert');
+        } else {
+          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute('inert', '');
+        }
       });
     }
 
@@ -150,6 +209,8 @@ document.addEventListener('DOMContentLoaded', function() {
         track.style.transform = 'translateX(-' + ((currentIndex + 1) * cardWidth) + 'px)';
       }
       updateDots();
+      updateSlideVisibility();
+      announceSlide('Video ' + (currentIndex + 1) + ' of ' + n);
     }
 
     track.addEventListener('transitionend', function (event) {
@@ -166,6 +227,9 @@ document.addEventListener('DOMContentLoaded', function() {
       track.style.display = 'flex';
       track.style.gap = '0';
       document.querySelectorAll('.yt-js-only').forEach(function (el) { el.style.display = 'flex'; });
+      ytSection.setAttribute('role', 'region');
+      ytSection.setAttribute('aria-roledescription', 'carousel');
+      ytSection.setAttribute('aria-label', 'YouTube videos');
 
       prepareLoopClones();
       setCardWidths();
@@ -177,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
       track.offsetHeight;
       track.style.transition = 'transform 300ms ease-in-out';
       updateDots();
+      updateSlideVisibility();
     }
 
     prevButton.addEventListener('click', function () { goTo(currentIndex - 1); });
@@ -265,6 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
       var lastClone = twCards[twCards.length - 1].cloneNode(true);
       firstClone.setAttribute('data-carousel-clone', 'true');
       lastClone.setAttribute('data-carousel-clone', 'true');
+      markCloneInert(firstClone);
+      markCloneInert(lastClone);
       twTrack.appendChild(firstClone);
       twTrack.insertBefore(lastClone, twTrack.firstChild);
     }
@@ -276,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === twIndex ? ' is-active' : '');
         dot.setAttribute('aria-label', 'Go to tweet ' + (i + 1));
+        if (i === twIndex) dot.setAttribute('aria-current', 'true');
         dot.addEventListener('click', (function (idx) { return function () { twGoTo(idx); }; })(i));
         twDotsEl.appendChild(dot);
       }
@@ -284,6 +352,24 @@ document.addEventListener('DOMContentLoaded', function() {
     function twUpdateDots() {
       twDotsEl.querySelectorAll('button').forEach(function (dot, i) {
         dot.className = 'carousel-dot' + (i === twIndex ? ' is-active' : '');
+        if (i === twIndex) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function twUpdateSlideVisibility() {
+      var vc = twVisibleCount();
+      twCards.forEach(function (card, i) {
+        if (i >= twIndex && i < twIndex + vc) {
+          card.removeAttribute('aria-hidden');
+          card.removeAttribute('inert');
+        } else {
+          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute('inert', '');
+        }
       });
     }
 
@@ -306,6 +392,8 @@ document.addEventListener('DOMContentLoaded', function() {
         twTrack.style.transform = 'translateX(-' + ((twIndex + 1) * twCardWidth) + 'px)';
       }
       twUpdateDots();
+      twUpdateSlideVisibility();
+      announceSlide('Tweet ' + (twIndex + 1) + ' of ' + n);
     }
 
     twTrack.addEventListener('transitionend', function (event) {
@@ -323,6 +411,9 @@ document.addEventListener('DOMContentLoaded', function() {
       twTrack.style.gap = '0';
       twTrack.style.transition = 'transform 300ms ease-in-out';
       document.querySelectorAll('.tw-js-only').forEach(function (el) { el.style.display = 'flex'; });
+      twCarousel.setAttribute('role', 'region');
+      twCarousel.setAttribute('aria-roledescription', 'carousel');
+      twCarousel.setAttribute('aria-label', 'Tweets');
       twPrepareLoopClones();
       twSetCardWidths();
       twIndex = 0;
@@ -333,6 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
       twTrack.offsetHeight;
       twTrack.style.transition = 'transform 300ms ease-in-out';
       twUpdateDots();
+      twUpdateSlideVisibility();
     }
 
     twPrev.addEventListener('click', function () { twGoTo(twIndex - 1); });
@@ -395,6 +487,8 @@ document.addEventListener('DOMContentLoaded', function() {
       var lastClone = scCards[scCards.length - 1].cloneNode(true);
       firstClone.setAttribute('data-carousel-clone', 'true');
       lastClone.setAttribute('data-carousel-clone', 'true');
+      markCloneInert(firstClone);
+      markCloneInert(lastClone);
       scTrack.appendChild(firstClone);
       scTrack.insertBefore(lastClone, scTrack.firstChild);
     }
@@ -405,6 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var dot = document.createElement('button');
         dot.className = 'carousel-dot carousel-dot-light' + (i === scIndex ? ' is-active' : '');
         dot.setAttribute('aria-label', 'Go to plan ' + (i + 1));
+        if (i === scIndex) dot.setAttribute('aria-current', 'true');
         dot.addEventListener('click', (function (idx) { return function () { scGoTo(idx); }; })(i));
         scDotsEl.appendChild(dot);
       }
@@ -413,6 +508,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function scUpdateDots() {
       scDotsEl.querySelectorAll('button').forEach(function (dot, i) {
         dot.className = 'carousel-dot carousel-dot-light' + (i === scIndex ? ' is-active' : '');
+        if (i === scIndex) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
       });
     }
 
@@ -421,6 +521,18 @@ document.addEventListener('DOMContentLoaded', function() {
       scTitle.textContent = activeCard.dataset.title;
       scCopy.textContent = activeCard.dataset.copy;
       scSubscribeLink.href = activeCard.dataset.href;
+    }
+
+    function scUpdateSlideVisibility() {
+      scCards.forEach(function (card, i) {
+        if (i === scIndex) {
+          card.removeAttribute('aria-hidden');
+          card.removeAttribute('inert');
+        } else {
+          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute('inert', '');
+        }
+      });
     }
 
     function scGoTo(index) {
@@ -443,6 +555,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       scUpdateDots();
       scUpdateContent();
+      scUpdateSlideVisibility();
+      announceSlide('Plan ' + (scIndex + 1) + ' of ' + n + ': ' + scCards[scIndex].dataset.title);
     }
 
     scTrack.addEventListener('transitionend', function (event) {
@@ -460,6 +574,9 @@ document.addEventListener('DOMContentLoaded', function() {
       scTrack.style.gap = '0';
       scTrack.style.transition = 'transform 300ms ease-in-out';
       document.querySelectorAll('.sc-js-only').forEach(function (el) { el.style.display = 'flex'; });
+      scCarousel.setAttribute('role', 'region');
+      scCarousel.setAttribute('aria-roledescription', 'carousel');
+      scCarousel.setAttribute('aria-label', 'Smallcase plans');
       scPrepareLoopClones();
       scSetCardWidths();
       scIndex = 0;
@@ -471,6 +588,7 @@ document.addEventListener('DOMContentLoaded', function() {
       scTrack.style.transition = 'transform 300ms ease-in-out';
       scUpdateDots();
       scUpdateContent();
+      scUpdateSlideVisibility();
     }
 
     scPrev.addEventListener('click', function () { scGoTo(scIndex - 1); });
@@ -532,7 +650,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function titleSmallcaseIframes() {
     function applyTitle(iframe) {
-      if (!iframe.title) iframe.title = 'Smallcase investment portfolio';
+      if (iframe.title) return;
+      var card = iframe.closest('.sc-card');
+      var planName = card && card.dataset.title;
+      iframe.title = planName ? 'Smallcase portfolio: ' + planName : 'Smallcase investment portfolio';
     }
     document.querySelectorAll('.smallcase-embed-frame iframe').forEach(applyTitle);
     var observer = new MutationObserver(function (mutations) {

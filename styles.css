@@ -36,10 +36,12 @@ body {
     justify-content: center;
     min-height: 260px;
     width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .carousel-dot {
-    background: #d1d5db;
+    background: #6b7280;
     border-radius: 9999px;
     height: 0.625rem;
     transition: background 180ms ease, width 180ms ease;
@@ -108,4 +110,13 @@ body {
 
 .skip-link:focus {
     left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
 }
